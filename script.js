@@ -1,7 +1,6 @@
-// storage
 let requests = JSON.parse(localStorage.getItem("requests")) || [];
 
-// USER ACTIONS
+// USER SIDE
 function buy(coin){
   alert("Buy order placed for " + coin); }
 
@@ -10,14 +9,14 @@ function sell(coin){
 
 function deposit(){
   let amt = document.getElementById("depAmount").value;
-  requests.push("Deposit request: " + amt);
+  requests.push({type:"Deposit", amount:amt});
   save();
   alert("Deposit request sent");
 }
 
 function withdraw(){
   let amt = document.getElementById("wdAmount").value;
-  requests.push("Withdraw request: " + amt);
+  requests.push({type:"Withdraw", amount:amt});
   save();
   alert("Withdraw request sent");
 }
@@ -36,11 +35,27 @@ function adminLogin(){
 function loadRequests(){
   let ul = document.getElementById("requests");
   ul.innerHTML="";
-  requests.forEach(r=>{
+  requests.forEach((r,i)=>{
     let li=document.createElement("li");
-    li.innerText=r;
+    li.innerHTML = `${r.type}: ${r.amount}
+      <button onclick="approve(${i})">✔</button>
+      <button onclick="reject(${i})">❌</button>`;
     ul.appendChild(li);
   });
+}
+
+function approve(i){
+  alert("Approved: " + requests[i].type);
+  requests.splice(i,1);
+  save();
+  loadRequests();
+}
+
+function reject(i){
+  alert("Rejected: " + requests[i].type);
+  requests.splice(i,1);
+  save();
+  loadRequests();
 }
 
 function save(){
