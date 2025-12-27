@@ -1,33 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Crypto Exchange</title>
-<style>
-body{font-family:Arial;background:#0b0f19;color:white;text-align:center}
-.box{background:#111;padding:20px;margin:20px;border-radius:10px}
-button{padding:10px 20px;background:#00ffcc;border:none;border-radius:5px}
-</style>
+  <title>Simple Crypto Exchange</title>
+  <script src="script.js"></script>
 </head>
-
-<body>
+<body style="background:#0b0f19;color:white;text-align:center;font-family:Arial">
 
 <h1>💱 Simple Crypto Exchange</h1>
 
-<div class="box">
-<h2>BTC / USDT</h2>
-<p>Price: $43,500</p>
-<button>Buy</button>
-<button>Sell</button>
-</div>
+<h3>BTC / USDT</h3>
+<button onclick="buy('BTC')">Buy</button> <button onclick="sell('BTC')">Sell</button>
 
-<div class="box">
-<h2>ETH / USDT</h2>
-<p>Price: $2,300</p>
-<button>Buy</button>
-<button>Sell</button>
-</div>
+<h3>ETH / USDT</h3>
+<button onclick="buy('ETH')">Buy</button> <button onclick="sell('ETH')">Sell</button>
 
-<p>⚠ Demo Exchange – Real Trading Not Available</p>
+<hr>
+
+<h3>Deposit</h3>
+<input id="depAmount" placeholder="Amount"> <button onclick="deposit()">Submit</button>
+
+<h3>Withdraw</h3>
+<input id="wdAmount" placeholder="Amount"> <button onclick="withdraw()">Submit</button>
+
+<p>⚠ Demo Exchange – Real trading not available</p>
 
 </body>
 </html>
