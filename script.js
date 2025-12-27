@@ -1,9 +1,15 @@
-// fake demo requests
+// ================================
+//  AF CRYPTO EXCHANGE 
+// ================================
+
+// Demo requests (auto load)
 let requests = JSON.parse(localStorage.getItem("requests")) || [
   { type: "Deposit", amount: "100 USDT" },
   { type: "Withdraw", amount: "50 USDT" } ];
 
+// ================================
 // ADMIN LOGIN
+// ================================
 function adminLogin() {
   let pass = document.getElementById("adminPass").value;
 
@@ -15,7 +21,9 @@ function adminLogin() {
   }
 }
 
+// ================================
 // LOAD REQUESTS
+// ================================
 function loadRequests() {
   let ul = document.getElementById("requests");
   ul.innerHTML = "";
@@ -23,15 +31,17 @@ function loadRequests() {
   requests.forEach((r, i) => {
     let li = document.createElement("li");
     li.innerHTML = `
-      ${r.type}: ${r.amount}
-      <button onclick="approve(${i})">✔</button>
-      <button onclick="reject(${i})">✖</button>
+      ${r.type} : ${r.amount}
+      <button onclick="approve(${i})">✔ Approve</button>
+      <button onclick="reject(${i})">✖ Reject</button>
     `;
     ul.appendChild(li);
   });
 }
 
-// APPROVE
+// ================================
+// APPROVE REQUEST
+// ================================
 function approve(i) {
   alert("Approved: " + requests[i].type);
   requests.splice(i, 1);
@@ -39,7 +49,9 @@ function approve(i) {
   loadRequests();
 }
 
-// REJECT
+// ================================
+// REJECT REQUEST
+// ================================
 function reject(i) {
   alert("Rejected: " + requests[i].type);
   requests.splice(i, 1);
@@ -47,7 +59,8 @@ function reject(i) {
   loadRequests();
 }
 
-// SAVE TO STORAGE
+// ================================
+// SAVE DATA
+// ================================
 function save() {
   localStorage.setItem("requests", JSON.stringify(requests)); }
-
