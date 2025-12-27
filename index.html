@@ -1,53 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>AF Exchange - Login</title>
-</head>
-<body>
-
-<h2>Login</h2>
-
-<input type="email" id="email" placeholder="Email"><br><br>
-<input type="password" id="password" placeholder="Password"><br><br>
-
-<button onclick="login()">Login</button>
-<button onclick="signup()">Signup</button>
-
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-  import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-
-  // 🔴 YAHAN APNA FIREBASE CONFIG PASTE KARO
-  const firebaseConfig = {
-    apiKey: "PASTE_HERE",
-    authDomain: "PASTE_HERE",
-    projectId: "PASTE_HERE",
-    storageBucket: "PASTE_HERE",
-    messagingSenderId: "PASTE_HERE",
-    appId: "PASTE_HERE"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-
-  window.signup = function () {
-    createUserWithEmailAndPassword(
-      auth,
-      document.getElementById("email").value,
-      document.getElementById("password").value
-    ).then(() => alert("Signup Successful"))
-     .catch(err => alert(err.message));
-  }
-
-  window.login = function () {
-    signInWithEmailAndPassword(
-      auth,
-      document.getElementById("email").value,
-      document.getElementById("password").value
-    ).then(() => alert("Login Successful"))
-     .catch(err => alert(err.message));
-  }
-</script>
-
-</body>
-</html>
+const firebaseConfig = {
+  apiKey: "PASTE_HERE",
+  authDomain: "PASTE_HERE",
+  projectId: "PASTE_HERE",
+  storageBucket: "PASTE_HERE",
+  messagingSenderId: "PASTE_HERE",
+  appId: "PASTE_HERE"
+};
