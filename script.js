@@ -60,4 +60,13 @@ function reject(i){
 
 function save(){
   localStorage.setItem("requests", JSON.stringify(requests)); }
+function adminLogin() {
+  let pass = document.getElementById("adminPass").value;
+
+  if (pass === "admin123") {
+    document.getElementById("panel").style.display = "block";
+  } else {
+    alert("Wrong password");
+  }
+}
 
