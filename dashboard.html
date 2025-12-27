@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+</head>
+<body>
+
+<h1>Welcome to Dashboard</h1>
+<p id="userEmail"></p>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "PASTE_HERE",
+    authDomain: "PASTE_HERE",
+    projectId: "PASTE_HERE",
+    storageBucket: "PASTE_HERE",
+    messagingSenderId: "PASTE_HERE",
+    appId: "PASTE_HERE"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  // ✅ Check user logged in or not
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      document.getElementById("userEmail").innerText =
+        "Logged in as: " + user.email;
+    } else {
+      // ❌ Agar login nahi → wapas login page
+      window.location.href = "index.html";
+    }
+  });
+
+  // Logout
+  window.logout = function () {
+    signOut(auth).then(() => {
+      window.location.href = "index.html";
+    });
+  };
+</script>
+
+<button onclick="logout()">Logout</button>
+
+</body>
+</html>
