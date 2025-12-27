@@ -1,29 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Admin Panel</title>
+  <title>Admin Panel</title>
+  <script src="script.js"></script>
 </head>
-<body>
+<body style="font-family:Arial">
 
 <h2>Admin Login</h2>
-<input id="pass" type="password" placeholder="Admin Password">
-<button onclick="login()">Login</button>
+<input id="adminPass" type="password" placeholder="Password">
+<button onclick="adminLogin()">Login</button>
 
-<div id="panel" style="display:none;">
-  <h3>Users</h3>
-  <pre id="users"></pre>
+<div id="panel" style="display:none">
+
+<h3>Users Requests</h3>
+<ul id="requests"></ul>
+
 </div>
-
-<script>
-function login(){
-  if(pass.value === "admin123"){
-    panel.style.display="block";
-    users.innerText = localStorage.getItem("users");
-  } else {
-    alert("Wrong password");
-  }
-}
-</script>
 
 </body>
 </html>
