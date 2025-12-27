@@ -4,22 +4,15 @@
   <title>Admin Panel</title>
   <script src="script.js"></script>
 </head>
-
-<body style="font-family:Arial;background:#f5f5f5;text-align:center">
+<body style="font-family:Arial">
 
 <h2>Admin Login</h2>
-
-<input id="adminPass" type="password" placeholder="Enter Admin Password">
-<br><br>
+<input type="password" id="adminPass" placeholder="Password">
 <button onclick="adminLogin()">Login</button>
 
-<div id="panel" style="display:none;margin-top:30px">
-  <h3>Users Requests</h3>
-
-  <ul id="requests">
-    <li>Deposit request: 100 USDT</li>
-    <li>Withdraw request: 50 USDT</li>
-  </ul>
+<div id="panel" style="display:none">
+  <h3>User Requests</h3>
+  <ul id="requests"></ul>
 </div>
 
 </body>
