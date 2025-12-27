@@ -3,26 +3,22 @@
 <head>
   <title>Simple Crypto Exchange</title>
   <script src="script.js"></script>
+  <style>
+    body{font-family:Arial;background:#111;color:#fff;text-align:center}
+    input,button{padding:8px;margin:5px}
+  </style>
 </head>
-<body style="background:#0b0f19;color:white;text-align:center;font-family:Arial">
+<body>
 
-<h1>💱 Simple Crypto Exchange</h1>
-
-<h3>BTC / USDT</h3>
-<button onclick="buy('BTC')">Buy</button> <button onclick="sell('BTC')">Sell</button>
-
-<h3>ETH / USDT</h3>
-<button onclick="buy('ETH')">Buy</button> <button onclick="sell('ETH')">Sell</button>
-
-<hr>
+<h1>Simple Crypto Exchange</h1>
 
 <h3>Deposit</h3>
-<input id="depAmount" placeholder="Amount"> <button onclick="deposit()">Submit</button>
+<input id="depAmount" placeholder="Amount"> <button onclick="sendRequest('Deposit')">Submit</button>
 
 <h3>Withdraw</h3>
-<input id="wdAmount" placeholder="Amount"> <button onclick="withdraw()">Submit</button>
+<input id="withAmount" placeholder="Amount"> <button onclick="sendRequest('Withdraw')">Submit</button>
 
-<p>⚠ Demo Exchange – Real trading not available</p>
+<p>⚠️ Demo Exchange – Real trading not available</p>
 
 </body>
 </html>
