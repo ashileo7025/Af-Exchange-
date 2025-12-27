@@ -1,10 +1,53 @@
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyAbuH_r-QjjCD3G5E_oHdVrpR5-0M21Pmo",
-  authDomain: "af---exchange.firebaseapp.com",
-  projectId: "af---exchange",
-  storageBucket: "af---exchange.firebasestorage.app",
-  messagingSenderId: "42976263940",
-  appId: "1:42976263940:web:478f7e05be2fe7fffa1a51",
-  measurementId: "G-LH4PE7VKWJ"
-};
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AF Exchange - Login</title>
+</head>
+
+<body>
+
+  <h2>AF Exchange Login</h2>
+
+  <input type="email" id="email" placeholder="Email"><br><br>
+  <input type="password" id="password" placeholder="Password"><br><br>
+
+  <button onclick="signup()">Signup</button>
+  <button onclick="login()">Login</button>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "YAHAN_API_KEY",
+      authDomain: "YAHAN_AUTH_DOMAIN",
+      projectId: "YAHAN_PROJECT_ID",
+      storageBucket: "YAHAN_STORAGE",
+      messagingSenderId: "YAHAN_SENDER_ID",
+      appId: "YAHAN_APP_ID"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    window.signup = function () {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      createUserWithEmailAndPassword(auth, email, password)
+        .then(() => alert("Signup Successful"))
+        .catch(error => alert(error.message));
+    };
+
+    window.login = function () {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      signInWithEmailAndPassword(auth, email, password)
+        .then(() => alert("Login Successful"))
+        .catch(error => alert(error.message));
+    };
+  </script>
+
+</body>
+</html>
