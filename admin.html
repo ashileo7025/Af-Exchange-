@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Panel</title>
+</head>
+<body>
+
+<h2>Admin Login</h2>
+<input id="pass" type="password" placeholder="Admin Password">
+<button onclick="login()">Login</button>
+
+<div id="panel" style="display:none;">
+  <h3>Users</h3>
+  <pre id="users"></pre>
+</div>
+
+<script>
+function login(){
+  if(pass.value === "admin123"){
+    panel.style.display="block";
+    users.innerText = localStorage.getItem("users");
+  } else {
+    alert("Wrong password");
+  }
+}
+</script>
+
+</body>
+</html>
