@@ -10,29 +10,36 @@
   <div class="container">
     <h1>AF Exchange</h1>
 
+    <!-- LOGIN -->
     <div class="card">
       <h2>Login</h2>
 
-      <label>Email</label>
       <form id="loginForm">
+        <label>Email or Mobile</label>
+        <input type="text" id="loginUser" placeholder="Email or Mobile number">
 
-      <label>Password</label>
-      <input type="password" id="loginPassword">
+        <label>Password</label>
+        <input type="password" id="loginPassword">
 
-      <button class="btn">Login</button>
+        <button class="btn" type="submit">Login</button>
+      </form>
     </div>
 
+    <!-- REGISTER -->
     <div class="card">
       <h2>Register</h2>
 
-      <label>Email</label>
-      <input type="email" id="regEmail">
+      <form id="registerForm">
+        <label>Email or Mobile</label>
+        <input type="text" id="regUser" placeholder="Email or Mobile number">
 
-      <label>Password</label>
-      <input type="password" id="regPassword">
+        <label>Password</label>
+        <input type="password" id="regPassword">
 
-      <button class="btn">Create Account</button>
+        <button class="btn" type="submit">Create Account</button>
+      </form>
     </div>
+
   </div>
 </body>
 </html>
