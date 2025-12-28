@@ -1,48 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>User Dashboard</title>
+  <title>AF Exchange Dashboard</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="exchange-bg">
 
-<h2>User Dashboard</h2>
-<p id="userEmail"></p>
+<div class="topbar">AF Exchange</div>
 
-<h3>Balance: $1000</h3>
-
-<button onclick="logout()">Logout</button>
-
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-
-const firebaseConfig = {
-  apiKey: "YOUR_KEY",
-  authDomain: "YOUR_DOMAIN",
-  projectId: "YOUR_ID",
-  storageBucket: "YOUR_BUCKET",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    document.getElementById("userEmail").innerText =
-      "Logged in as: " + user.email;
-  } else {
-    window.location.href = "index.html";
-  }
-});
-
-window.logout = function () {
-  signOut(auth).then(() => {
-    window.location.href = "index.html";
-  });
-};
-</script>
+<div class="chart">
+  <iframe
+    src="https://s.tradingview.com/widgetembed/?symbol=BINANCE:BTCUSDT&interval=15&theme=dark"
+    width="100%" height="100%" frameborder="0">
+  </iframe>
+</div>
 
 </body>
 </html>
