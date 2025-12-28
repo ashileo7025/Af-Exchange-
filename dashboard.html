@@ -26,27 +26,23 @@
   <div class="card">
     <h2>Account Actions</h2>
 
-    <button class="btn" id="kycBtn">KYC Verification</button>
-    <button class="btn" id="changePassBtn">Change Password</button>
-    <button class="btn" id="logoutBtn" style="background:#c0392b;">Logout</button>
+    <button class="btn" onclick="window.location.href='kyc.html'">
+      KYC Verification
+    </button>
+
+    <button class="btn" onclick="window.location.href='change-password.html'">
+      Change Password
+    </button>
+
+    <button class="btn" onclick="logout()" style="background:#c0392b;">
+      Logout
+    </button>
   </div>
 
 </div>
 
-<!-- JS -->
-<script>
-  document.getElementById("logoutBtn").addEventListener("click", function () {
-    window.location.href = "index.html";
-  });
-
-  document.getElementById("kycBtn").addEventListener("click", function () {
-    window.location.href = "kyc.html";
-  });
-
-  document.getElementById("changePassBtn").addEventListener("click", function () {
-    window.location.href = "change-password.html";
-  });
-</script>
+<!-- Firebase / Auth JS -->
+<script src="login.js" type="module"></script>
 
 </body>
 </html>
