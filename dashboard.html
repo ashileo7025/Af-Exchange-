@@ -1,172 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>AF Exchange Dashboard</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-body{
-    margin:0;
-    font-family: Arial, sans-serif;
-    background:#0b1220;
-    color:#fff;
-}
-
-/* Top bar */
-.header{
-    background:#111827;
-    padding:15px 20px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-.header h2{margin:0;color:#38bdf8;}
-.logout{
-    background:#ef4444;
-    border:none;
-    color:#fff;
-    padding:8px 14px;
-    border-radius:5px;
-    cursor:pointer;
-}
-
-/* Layout */
-.container{
-    display:grid;
-    grid-template-columns:250px 1fr;
-    min-height:100vh;
-}
-
-/* Sidebar */
-.sidebar{
-    background:#020617;
-    padding:20px;
-}
-.sidebar a{
-    display:block;
-    color:#cbd5e1;
-    text-decoration:none;
-    padding:12px;
-    margin-bottom:8px;
-    border-radius:6px;
-}
-.sidebar a:hover{
-    background:#1e293b;
-    color:#38bdf8;
-}
-
-/* Main */
-.main{
-    padding:20px;
-}
-
-/* Cards */
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:15px;
-}
-.card{
-    background:#020617;
-    padding:20px;
-    border-radius:10px;
-}
-.card h3{
-    margin:0;
-    color:#38bdf8;
-}
-.card p{
-    font-size:22px;
-    margin-top:10px;
-}
-
-/* Buttons */
-.actions{
-    margin-top:20px;
-}
-.actions button{
-    background:#0ea5e9;
-    border:none;
-    color:#fff;
-    padding:12px 20px;
-    margin-right:10px;
-    border-radius:6px;
-    cursor:pointer;
-}
-.actions button.withdraw{
-    background:#22c55e;
-}
-
-/* Fake chart */
-.chart{
-    background:#020617;
-    margin-top:25px;
-    padding:20px;
-    border-radius:10px;
-    height:250px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#64748b;
-}
-</style>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div class="header">
-    <h2>AF Exchange</h2>
-    <button class="logout" onclick="logout()">Logout</button>
-</div>
-
 <div class="container">
+  <h1>AF Exchange</h1>
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <a href="#">Dashboard</a>
-        <a href="#">Markets</a>
-        <a href="#">Trade</a>
-        <a href="#">Deposit</a>
-        <a href="#">Withdraw</a>
-        <a href="#">Profile</a>
-    </div>
+  <div class="nav">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="markets.html">Markets</a>
+    <a href="trade.html">Trade</a>
+    <a href="deposit.html">Deposit</a>
+    <a href="withdraw.html">Withdraw</a>
+    <a href="profile.html">Profile</a>
+  </div>
 
-    <!-- Main -->
-    <div class="main">
-
-        <div class="cards">
-            <div class="card">
-                <h3>Total Balance</h3>
-                <p>$ 2,139.00</p>
-            </div>
-            <div class="card">
-                <h3>BTC Balance</h3>
-                <p>0.0123 BTC</p>
-            </div>
-            <div class="card">
-                <h3>USDT Balance</h3>
-                <p>1,540 USDT</p>
-            </div>
-        </div>
-
-        <div class="actions">
-            <button>Deposit</button>
-            <button class="withdraw">Withdraw</button>
-        </div>
-
-        <div class="chart">
-            📊 Trading Chart (demo)
-        </div>
-
-    </div>
+  <div class="card">
+    <h2>Total Balance</h2>
+    <div class="balance">2139 USDT</div>
+  </div>
 </div>
-
-<script>
-function logout(){
-    window.location.href="index.html";
-}
-</script>
 
 </body>
 </html>
+
+
+    
