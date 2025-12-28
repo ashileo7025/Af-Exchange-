@@ -1,34 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>KYC Verification</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<h2>KYC Verification</h2>
+<input id="name" placeholder="Full Name">
+<input id="cnic" placeholder="CNIC / ID">
+<input type="file" id="idimg">
+<button onclick="submitKYC()">Submit</button>
 
-<div class="container">
-  <h1>AF Exchange</h1>
-
-  <div class="card">
-    <h2>KYC Verification</h2>
-
-    <label>Full Name</label>
-    <input type="text" id="fullName">
-
-    <label>CNIC / ID Number</label>
-    <input type="text" id="idNumber">
-
-    <label>Upload ID Image</label>
-    <input type="file" id="idImage">
-
-    <button class="btn" onclick="submitKYC()">Submit KYC</button>
-  </div>
-
-  <button class="btn" onclick="window.location.href='dashboard.html'">
-    Back to Dashboard
-  </button>
-</div>
-
-<script src="kyc.js" type="module"></script>
-</body>
-</html>
+<script type="module" src="kyc.js"></script>
