@@ -1,52 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Withdraw</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<h2>Withdraw USDT</h2>
+<input placeholder="Your TRC20 Address">
+<input placeholder="Amount">
+<button onclick="withdraw()">Withdraw</button>
 
-<div class="container">
-  <h1>AF Exchange</h1>
-
-  <div class="nav">
-    <a href="dashboard.html">Dashboard</a>
-    <a href="markets.html">Markets</a>
-    <a href="trade.html">Trade</a>
-    <a href="deposit.html">Deposit</a>
-    <a href="withdraw.html">Withdraw</a>
-    <a href="profile.html">Profile</a>
-  </div>
-
-  <div class="card">
-    <h2>Withdraw Funds</h2>
-
-    <label>Select Coin</label>
-    <select>
-      <option>USDT (TRC20)</option>
-      <option>BTC</option>
-      <option>ETH</option>
-    </select>
-
-    <label>Wallet Address</label>
-    <input type="text" placeholder="Enter wallet address">
-
-    <label>Amount</label>
-    <input type="number" placeholder="Enter amount">
-
-    <button class="btn">Submit Withdraw</button>
-
-    <p style="margin-top:15px;color:#aaa;">
-      ⏳ Withdraw requests are processed manually.
-    </p>
-  </div>
-
-  <div class="card">
-    <h2>Withdraw History</h2>
-    <p>No withdrawals yet</p>
-  </div>
-
-</div>
-
-</body>
-</html>
+<script type="module" src="withdraw.js"></script>
