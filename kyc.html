@@ -1,7 +1,32 @@
-<h2>KYC Verification</h2>
-<input id="name" placeholder="Full Name">
-<input id="cnic" placeholder="CNIC / ID">
-<input type="file" id="idimg">
-<button onclick="submitKYC()">Submit</button>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>KYC Verification</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<script type="module" src="kyc.js"></script>
+<div class="container">
+  <h1>KYC Verification</h1>
+
+  <div class="card">
+    <label>Full Name</label>
+    <input type="text">
+
+    <label>CNIC / ID Number</label>
+    <input type="text">
+
+    <label>Upload ID (Front)</label>
+    <input type="file">
+
+    <label>Upload ID (Back)</label>
+    <input type="file">
+
+    <button class="btn">Submit KYC</button>
+  </div>
+
+  <button class="btn" onclick="location.href='dashboard.html'">Back</button>
+</div>
+
+</body>
+</html>
