@@ -1,9 +1,27 @@
-<h2>Deposit USDT (TRC20)</h2>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Deposit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<p><b>TRC20 Address:</b></p>
-<p>TX9aXk2kxxxxxxxxxxxx</p>
+<div class="container">
+  <h1>Deposit USDT</h1>
 
-<input id="amount" placeholder="Amount">
-<button onclick="deposit()">Submit</button>
+  <div class="card">
+    <p><b>Network:</b> TRC20</p>
+    <p><b>Wallet Address:</b></p>
+    <input value="TXYZ123TRC20ADDRESS" readonly>
 
-<script type="module" src="deposit.js"></script>
+    <label>Amount</label>
+    <input type="number">
+
+    <button class="btn">Submit Deposit</button>
+  </div>
+
+  <button class="btn" onclick="location.href='dashboard.html'">Back</button>
+</div>
+
+</body>
+</html>
