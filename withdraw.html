@@ -1,6 +1,26 @@
-<h2>Withdraw USDT</h2>
-<input placeholder="Your TRC20 Address">
-<input placeholder="Amount">
-<button onclick="withdraw()">Withdraw</button>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Withdraw</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<script type="module" src="withdraw.js"></script>
+<div class="container">
+  <h1>Withdraw USDT</h1>
+
+  <div class="card">
+    <label>TRC20 Address</label>
+    <input type="text">
+
+    <label>Amount</label>
+    <input type="number">
+
+    <button class="btn">Request Withdraw</button>
+  </div>
+
+  <button class="btn" onclick="location.href='dashboard.html'">Back</button>
+</div>
+
+</body>
+</html>
