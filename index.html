@@ -15,11 +15,11 @@
       <h2>Login</h2>
 
       <form id="loginForm">
-        <label>Email or Mobile</label>
-        <input type="text" id="loginUser" placeholder="Email or Mobile number">
+        <label>Email</label>
+        <input type="email" id="loginEmail" required>
 
         <label>Password</label>
-        <input type="password" id="loginPassword">
+        <input type="password" id="loginPassword" required>
 
         <button class="btn" type="submit">Login</button>
       </form>
@@ -30,17 +30,29 @@
       <h2>Register</h2>
 
       <form id="registerForm">
-        <label>Email or Mobile</label>
-        <input type="text" id="regUser" placeholder="Email or Mobile number">
+        <label>Email</label>
+        <input type="email" id="regEmail" required>
 
         <label>Password</label>
-        <input type="password" id="regPassword">
+        <input type="password" id="regPassword" required>
 
         <button class="btn" type="submit">Create Account</button>
       </form>
     </div>
-
   </div>
-    js
+
+  <!-- JS -->
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      window.location.href = "dashboard.html";
+    });
+
+    document.getElementById("registerForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Account Created (Demo)");
+    });
+  </script>
+
 </body>
 </html>
