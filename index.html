@@ -50,7 +50,7 @@ window.login = function () {
 
   signInWithEmailAndPassword(auth, email, password)
     .then(() => {
-      window.location.href = "dashboard.html";
+      alert("Login successful");
     })
     .catch(err => alert(err.message));
 };
