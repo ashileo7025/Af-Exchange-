@@ -1,2 +1,41 @@
-<h1>KYC Page</h1>
-<p>Upload documents here</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>KYC Verification</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>AF Exchange</h1>
+
+  <div class="card">
+    <h2>KYC Verification</h2>
+
+    <label>Full Name</label>
+    <input type="text" placeholder="Enter full name">
+
+    <label>CNIC / ID Number</label>
+    <input type="text" placeholder="Enter ID number">
+
+    <label>Upload ID Front</label>
+    <input type="file">
+
+    <label>Upload ID Back</label>
+    <input type="file">
+
+    <button class="btn">Submit KYC</button>
+
+    <p style="margin-top:15px;color:#aaa;">
+      KYC approval is manual (24–48 hours)
+    </p>
+  </div>
+
+  <button class="btn" onclick="window.location.href='dashboard.html'">
+    Back to Dashboard
+  </button>
+
+</div>
+
+</body>
+</html>
