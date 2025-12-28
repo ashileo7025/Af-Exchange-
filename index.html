@@ -1,62 +1,32 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>AF Exchange - Register</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body class="auth-bg">
-
-<div class="auth-box">
-  <h2>Register now</h2>
-
-  <input type="email" id="email" placeholder="Enter email">
-  <input type="password" id="password" placeholder="Enter password">
-  <input type="password" id="cpassword" placeholder="Confirm password">
-
-  <button onclick="signup()">Register</button>
-  <p>Already have account?</p>
-  <button onclick="login()">Login</button>
-</div>
-
 <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-const firebaseConfig = {
-  apiKey: "YOUR_KEY",
-  authDomain: "YOUR_DOMAIN",
-  projectId: "YOUR_ID",
-  appId: "YOUR_APP_ID"
-};
+  const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT.firebaseapp.com",
+    projectId: "YOUR_PROJECT",
+    storageBucket: "YOUR_PROJECT.appspot.com",
+    messagingSenderId: "XXXX",
+    appId: "XXXX"
+  };
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
 
-window.signup = function () {
-  const email = email.value;
-  const password = password.value;
+  window.loginUser = function () {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
-  createUserWithEmailAndPassword(auth, email, password)
-    .then(() => {
-      alert("Register successful");
-      window.location.href = "dashboard.html";
-    })
-    .catch(err => alert(err.message));
-};
-
-window.login = function () {
-  const email = email.value;
-  const password = password.value;
-
-  signInWithEmailAndPassword(auth, email, password)
-    .then(() => {
-      alert("Login successful");
-    })
-    .catch(err => alert(err.message));
-};
+    signInWithEmailAndPassword(auth, email, password)
+      .then(() => {
+        window.location.href = "dashboard.html";
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  }
 </script>
 
-</body>
-</html>
 
-    
+ 
