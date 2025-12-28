@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Login</title>
+  <meta charset="UTF-8">
+  <title>AF Exchange - Login</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <div class="container">
+    <h1>AF Exchange</h1>
 
-<h2>Login</h2>
+    <div class="card">
+      <h2>Login</h2>
 
-<input type="email" id="email" placeholder="Email"><br><br>
-<input type="password" id="password" placeholder="Password"><br><br>
+      <label>Email</label>
+      <input type="email" id="loginEmail">
 
-<button onclick="login()">Login</button>
+      <label>Password</label>
+      <input type="password" id="loginPassword">
 
-<!-- Firebase CDN -->
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+      <button class="btn">Login</button>
+    </div>
 
-<!-- Your JS -->
-<script src="login.js"></script>
+    <div class="card">
+      <h2>Register</h2>
 
+      <label>Email</label>
+      <input type="email" id="regEmail">
+
+      <label>Password</label>
+      <input type="password" id="regPassword">
+
+      <button class="btn">Create Account</button>
+    </div>
+  </div>
 </body>
 </html>
