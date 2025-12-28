@@ -1,55 +1,12 @@
-<script type="module">
-  import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-
-  const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT.firebaseapp.com",
-    projectId: "YOUR_PROJECT",
-    storageBucket: "YOUR_PROJECT.appspot.com",
-    messagingSenderId: "XXXX",
-    appId: "XXXX"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-
-  onAuthStateChanged(auth, (user) => {
-    if (!user) {
-      window.location.href = "index.html";
-    }
-  });
-</script>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>AF Exchange Dashboard</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial;
-      background: #0b1c26;
-      color: white;
-      text-align: center;
-    }
-    .box {
-      margin-top: 150px;
-    }
-  </style>
+  <title>Dashboard</title>
 </head>
 <body>
 
-  <div class="box">
-    <h1>Welcome to AF Exchange 💱</h1>
-    <p>You are successfully logged in</p>
-    <button onclick="logout()">Logout</button>
-  </div>
-
-  <script>
-    function logout() {
-      window.location.href = "index.html";
-    }
-  </script>
+<h1>Welcome to AF Exchange Dashboard</h1>
+<p>آپ کامیابی سے لاگ ان ہو چکے ہیں ✅</p>
 
 </body>
 </html>
