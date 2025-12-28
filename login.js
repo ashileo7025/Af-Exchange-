@@ -1,6 +1,11 @@
-<script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, updatePassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  signOut,
+  updatePassword
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAbuH_r-QjjCD3G5E_oHdVrpR5-0M21Pmo",
@@ -14,29 +19,33 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// LOGIN
-window.login = function(email, password){
-  signInWithEmailAndPassword(auth, email, password)
-  .then(()=> window.location.href="dashboard.html")
-  .catch(e=>alert(e.message));
-}
+/* LOGIN */
+document.getElementById("loginForm")?.addEventListener("submit", e => {
+  e.preventDefault();
+  const email = loginEmail.value;
+  const pass = loginPassword.value;
 
-// REGISTER
-window.register = function(email, password){
-  createUserWithEmailAndPassword(auth, email, password)
-  .then(()=> alert("Account created"))
-  .catch(e=>alert(e.message));
-}
+  signInWithEmailAndPassword(auth, email, pass)
+    .then(() => window.location.href = "dashboard.html")
+    .catch(err => alert(err.message));
+});
 
-// LOGOUT
-window.logout = function(){
-  signOut(auth).then(()=> window.location.href="index.html");
-}
+/* REGISTER */
+document.getElementById("registerForm")?.addEventListener("submit", e => {
+  e.preventDefault();
+  createUserWithEmailAndPassword(auth, regEmail.value, regPassword.value)
+    .then(() => alert("Account Created"))
+    .catch(err => alert(err.message));
+});
 
-// CHANGE PASSWORD
-window.changePass = function(newPass){
+/* LOGOUT */
+window.logout = function () {
+  signOut(auth).then(() => window.location.href = "index.html");
+};
+
+/* CHANGE PASSWORD */
+window.changePass = function (newPass) {
   updatePassword(auth.currentUser, newPass)
-  .then(()=> alert("Password updated"))
-  .catch(e=>alert(e.message));
-}
-</script>
+    .then(() => alert("Password Updated"))
+    .catch(err => alert(err.message));
+};
