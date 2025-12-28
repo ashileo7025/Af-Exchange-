@@ -1,154 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>AF Exchange - Admin Panel</title>
+  <title>Admin Panel - AF Exchange</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
-  <h1>AF Exchange – Admin Panel</h1>
+  <h1>Admin Panel</h1>
 
+  <button class="btn" onclick="logout()">Logout</button>
+
+  <!-- KYC -->
   <div class="card">
     <h2>KYC Requests</h2>
     <div id="kycList">Loading...</div>
   </div>
 
+  <!-- Deposit -->
   <div class="card">
     <h2>Deposit Requests</h2>
     <div id="depositList">Loading...</div>
   </div>
 
+  <!-- Withdraw -->
   <div class="card">
     <h2>Withdraw Requests</h2>
     <div id="withdrawList">Loading...</div>
   </div>
 
-  <button class="btn" id="logoutBtn" style="background:#c0392b;">
-    Logout
-  </button>
 </div>
 
-<!-- FIREBASE + ADMIN JS -->
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { 
-  getAuth, 
-  onAuthStateChanged, 
-  signOut 
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-
-import { 
-  getFirestore, 
-  collection, 
-  getDocs, 
-  doc, 
-  updateDoc 
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyAbuH_r-QjjCD3G5E_oHdVrpR5-0M21Pmo",
-  authDomain: "af---exchange.firebaseapp.com",
-  projectId: "af---exchange",
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
-
-// 🔐 ADMIN EMAIL
-const ADMIN_EMAIL = "ashileo7025@gmail.com"; // <-- apni admin email
-
-// 🔒 ADMIN PROTECTION
-onAuthStateChanged(auth, (user) => {
-  if (!user || user.email !== ADMIN_EMAIL) {
-    alert("Access Denied");
-    window.location.href = "index.html";
-  }
-});
-
-// 🚪 LOGOUT
-document.getElementById("logoutBtn").onclick = () => {
-  signOut(auth).then(() => window.location.href = "index.html");
-};
-
-// 📄 LOAD KYC
-async function loadKYC() {
-  const kycList = document.getElementById("kycList");
-  kycList.innerHTML = "";
-
-  const querySnap = await getDocs(collection(db, "kyc"));
-  querySnap.forEach((docu) => {
-    const d = docu.data();
-    kycList.innerHTML += `
-      <div class="row">
-        <p>${d.name} | ${d.cnic}</p>
-        <button class="btn" onclick="approveKYC('${docu.id}')">Approve</button>
-      </div>
-    `;
-  });
-}
-
-// 💰 LOAD DEPOSITS
-async function loadDeposits() {
-  const list = document.getElementById("depositList");
-  list.innerHTML = "";
-
-  const snap = await getDocs(collection(db, "deposits"));
-  snap.forEach((docu) => {
-    const d = docu.data();
-    list.innerHTML += `
-      <div class="row">
-        <p>${d.email} | ${d.amount} USDT</p>
-        <button class="btn" onclick="approveDeposit('${docu.id}')">Approve</button>
-      </div>
-    `;
-  });
-}
-
-// 💸 LOAD WITHDRAW
-async function loadWithdraws() {
-  const list = document.getElementById("withdrawList");
-  list.innerHTML = "";
-
-  const snap = await getDocs(collection(db, "withdraws"));
-  snap.forEach((docu) => {
-    const d = docu.data();
-    list.innerHTML += `
-      <div class="row">
-        <p>${d.email} | ${d.amount} USDT</p>
-        <button class="btn" onclick="approveWithdraw('${docu.id}')">Approve</button>
-      </div>
-    `;
-  });
-}
-
-// ✅ APPROVE FUNCTIONS
-window.approveKYC = async (id) => {
-  await updateDoc(doc(db, "kyc", id), { status: "approved" });
-  alert("KYC Approved");
-  loadKYC();
-};
-
-window.approveDeposit = async (id) => {
-  await updateDoc(doc(db, "deposits", id), { status: "approved" });
-  alert("Deposit Approved");
-  loadDeposits();
-};
-
-window.approveWithdraw = async (id) => {
-  await updateDoc(doc(db, "withdraws", id), { status: "approved" });
-  alert("Withdraw Approved");
-  loadWithdraws();
-};
-
-// 🚀 LOAD ALL
-loadKYC();
-loadDeposits();
-loadWithdraws();
-
-</script>
-
+<script type="module" src="admin.js"></script>
 </body>
 </html>
