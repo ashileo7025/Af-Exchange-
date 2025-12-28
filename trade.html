@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Trade</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>AF Exchange</h1>
+
+  <div class="nav">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="markets.html">Markets</a>
+    <a href="trade.html">Trade</a>
+    <a href="deposit.html">Deposit</a>
+    <a href="withdraw.html">Withdraw</a>
+    <a href="profile.html">Profile</a>
+  </div>
+
+  <div class="card">
+    <h2>BTC / USDT</h2>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+
+      <!-- BUY -->
+      <div>
+        <h3 style="color:#00ff99;">Buy BTC</h3>
+        <input type="number" placeholder="Price (USDT)">
+        <input type="number" placeholder="Amount (BTC)">
+        <button class="btn">Buy</button>
+      </div>
+
+      <!-- SELL -->
+      <div>
+        <h3 style="color:#ff4d4d;">Sell BTC</h3>
+        <input type="number" placeholder="Price (USDT)">
+        <input type="number" placeholder="Amount (BTC)">
+        <button class="btn">Sell</button>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Open Orders</h2>
+    <p>No open orders</p>
+  </div>
+
+</div>
+
+</body>
+</html>
