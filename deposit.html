@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Deposit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>AF Exchange</h1>
+
+  <div class="nav">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="markets.html">Markets</a>
+    <a href="trade.html">Trade</a>
+    <a href="deposit.html">Deposit</a>
+    <a href="withdraw.html">Withdraw</a>
+    <a href="profile.html">Profile</a>
+  </div>
+
+  <div class="card">
+    <h2>Deposit Funds</h2>
+
+    <label>Select Coin</label>
+    <select>
+      <option>USDT (TRC20)</option>
+      <option>BTC</option>
+      <option>ETH</option>
+    </select>
+
+    <label>Deposit Address</label>
+    <input type="text" value="TX9s8K9xxxxxxYourWalletxxxx" readonly>
+
+    <button class="btn">Copy Address</button>
+
+    <p style="margin-top:15px;color:#aaa;">
+      ⚠ Send only selected coin to this address.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Deposit History</h2>
+    <p>No deposits yet</p>
+  </div>
+
+</div>
+
+</body>
+</html>
