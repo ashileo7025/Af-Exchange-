@@ -20,12 +20,33 @@
 
   <div class="card">
     <h2>Total Balance</h2>
-    <div class="balance"> 10 USDT</div>
+    <div class="balance">10 USDT</div>
   </div>
+
+  <div class="card">
+    <h2>Account Actions</h2>
+
+    <button class="btn" id="kycBtn">KYC Verification</button>
+    <button class="btn" id="changePassBtn">Change Password</button>
+    <button class="btn" id="logoutBtn" style="background:#c0392b;">Logout</button>
+  </div>
+
 </div>
+
+<!-- JS -->
+<script>
+  document.getElementById("logoutBtn").addEventListener("click", function () {
+    window.location.href = "index.html";
+  });
+
+  document.getElementById("kycBtn").addEventListener("click", function () {
+    window.location.href = "kyc.html";
+  });
+
+  document.getElementById("changePassBtn").addEventListener("click", function () {
+    window.location.href = "change-password.html";
+  });
+</script>
 
 </body>
 </html>
-
-
-    
